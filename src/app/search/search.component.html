@@ -1,0 +1,46 @@
+<div class="total-bl" [ngClass]="{'active': isActive}">
+  <svg (click)="inputActive()" class="search" xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+    <image id="ic_search_black_24dp_1x_copy_3" data-name="ic_search_black_24dp_1x copy 3" width="18" height="18"
+           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABF0lEQVQ4jZ2TQU7DMBBFP22vQSI4AxUbpFbqNXqSonKPLNhXQA8B94AWVqVSd8Cq8NBUY8mE2IF8aWLL8/2k2N8C4poAS2ALfPp4B4xrvl8VFgbANXlV7suCAuQNmAEF0ANK4BJ4936VA00iyFnCOIxgoxRo6YZZyznM3XebAm3dULSATty3aeof2e1I6knqS/pSWtbfSzL/oO4ywM7nxxmIqfRx19Q00IPPpy2g0L9v7HrY8FsZJs7nHPhw30UuR1UEm/vB9oFT4CqCLP6S7ABLaeHraw9qIyjUyHNiV7wHXoGb6HfWDlvVYdmH2FClQ0xPcfb+Cwowg/yAdQHVYY8Gsxx10bOksaRV2GxPpCProOLwlV6+AedjEwDrXVGUAAAAAElFTkSuQmCC"/>
+  </svg>
+
+  <div class="block-info">
+    <svg class="search-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+      <image id="ic_search_black_24dp_1x" width="18" height="18" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABUElEQVQ4jZ3UsS5lcRDH8Y+7GlqUXLyDqG4Qb0CxW6gUJOIBBKvcqDcUK9FphEeQ2Cs63kHcaFZyy1WRyMic5Kw9517xa2ZyZs73zH9m/meg3W4raREbaGEEXVzhAL/1UCNDgzjGBZYwlrGwy7jEr8yrVAGKpFX8xQ6a+IJJ7OIJazisA8XRFrOSgMzjtiJvJo82nDnt9wmN7EnoRw0kdIP99DfrjtZK/6RXM0vxVlWwkdMJPfQBddKO1oG66Y/3ATXTdquCjdyT0EofUBH/r9EF6CD97ZxOlWaxlc9/1oFirEc52vC/Yyr3aBp7uZBDOMV1Fai4IoO5bGs9jhaQr7jHXNp/Kgo9Yz2X7Rx/8IJHnOXIv+XLzay8WQa9v7T9VEDi6tzlhzvlij6qqCheDkj0MaATnwGFArZQgsUgJj4DKmBFZW+q/b98QNGbgEHnFQljR6wqSZZvAAAAAElFTkSuQmCC"/>
+    </svg>
+
+    <svg [ngClass]="{'hide': searchedText.length < 1}" (click)="clear()" class="clear-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+      <image id="ic_close_black_18dp_1x_copy" data-name="ic_close_black_18dp_1x copy" width="12" height="12" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAArklEQVQokYWSyw3CMAxAX0vPDMGJKzNQCW7swAT8PxvwkxigiwSkbsIwyJVdWSEKvliy3ktsJ0W9WALMgBf56JgSmAMBeGTwpzLTwWg8+QBDYKv5nYBXwBVoKi0KXAAblz18A05SqNxJBq81o/AdOBrkBRQ2EJ3r4IHyz2Z+Ir7BeraN7TTvU4IfsO85lkzwq+u2EZ3cSyLICwp8Ac6Jtr0URJAvUQNtZlaRAtB+AYm3IkPxvw4wAAAAAElFTkSuQmCC"/>
+    </svg>
+
+    <input type="text" class="input" (click)="searchClick($event)"
+           [(ngModel)]="searchedText">
+    <button type="submit">Найти</button>
+  </div>
+</div>
+
+<div class="menu-extra" [ngClass]="{'active': menuExtra}">
+  <div class="line fir-ln">
+    <input type="checkbox" id="my">
+    <label for="my">мои</label>
+    <input type="text" class="author" placeholder="Автор">
+  </div>
+
+  <div class="line">
+    <span class="sort-nm">Сортировать по:</span>
+    <select>
+      <option>дате</option>
+      <option>имени</option>
+    </select>
+  </div>
+
+  <div class="line">
+    <input type="checkbox" id="uch">
+    <label for="uch">я участник</label>
+    <input type="checkbox" id="zag">
+    <label for="zag">в заголовке</label>
+    <input type="checkbox" id="str">
+    <label for="str">строгий поиск</label>
+  </div>
+</div>
